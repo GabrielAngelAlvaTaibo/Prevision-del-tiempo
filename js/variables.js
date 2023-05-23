@@ -11,7 +11,7 @@ let mensaje = prompt("¿Desea saber el clima de esta semana? (-si- para continua
 // Variante global para contabilizar alertas
 let notificaciones = 0;
 
-//Ciclo para que el usuario indage el clima
+//Ciclo para que el usuario conozca el clima
 
 while (mensaje.toLocaleLowerCase() == "si"){
     let semana = prompt("Elija un día escribiendo su número correspondiente: \n1- Lunes \n2- Martes \n3- Miércoles \n4- Jueves \n5- Viernes \n6- Sábado \n7- Domingo");
