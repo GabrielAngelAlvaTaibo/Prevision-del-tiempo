@@ -1,5 +1,5 @@
 
-// Zona de experimentos
+// Zona de pruebas
 
 // let mensaje = prompt("¿Desea saber el clima de esta semana? (-si- para continuar)");
 // Variante global para contabilizar alertas
