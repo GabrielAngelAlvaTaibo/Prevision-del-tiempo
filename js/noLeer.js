@@ -1,17 +1,11 @@
-let nombreUsuario = prompt("Ingrese su nombre");
 
-while ((nombreUsuario == "") || (nombreUsuario == " ")){
-    alert("Por favor, ingrese su nombre")
-    nombreUsuario = prompt("Ingrese su nombre");
-}
+// Zona de experimentos
 
-alert("¡Bienvenido "+nombreUsuario+"!");
-
-let mensaje = prompt("¿Desea saber el clima de esta semana? (-si- para continuar)");
+// let mensaje = prompt("¿Desea saber el clima de esta semana? (-si- para continuar)");
 // Variante global para contabilizar alertas
-let notificaciones = 0;
+// let notificaciones = 0;
 
-//Ciclo para que el usuario conozca el clima
+//Ciclo para que el usuario conozca el clima de determinada zona
 
 while (mensaje.toLocaleLowerCase() == "si"){
     let semana = prompt("Elija un día escribiendo su número correspondiente: \n1- Lunes \n2- Martes \n3- Miércoles \n4- Jueves \n5- Viernes \n6- Sábado \n7- Domingo");
@@ -95,12 +89,4 @@ while (mensaje.toLocaleLowerCase() == "si"){
         }
 
     mensaje = prompt("¿Desea saber el clima de algún otro día? (-si- para continuar)");
-}
-
-alert("Gracias por elegirnos")
-
-// Uso de una función para calcular la cantidad de alertas guardadas
-function incrementarNotificaciones(cantidad){
-    notificaciones = notificaciones + cantidad;
-    alert ("Tiene un total de "+notificaciones+" "+"alertas agregadas.")
 }
