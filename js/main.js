@@ -32,7 +32,7 @@ boton.onclick = () => {
     })
     .then((result) => {
     if (result.isConfirmed) {
-        Swal.fire(`${filtrado.value} se a añadido a tus notificaciones!`, '', 'success')
+        Swal.fire(`${filtrado.value} se a añadido ha tus notificaciones!`, '', 'success')
         sessionStorage.setItem("notificaciones", parseInt(incrementarNotificaciones(1)));
         sessionStorage.setItem("notificacionesGuardadas", JSON.stringify(arrayStorage.push(`${filtrado.value}`)));
         console.log(notificacionesResultado);
@@ -52,6 +52,15 @@ boton.onclick = () => {
         mostrarCards(arrayDias)
     }
 }
+notificaciones.onclick = () =>{
+    console.log(typeof notificacionEspecificas);
+    console.log(notificacionEspecificas)
+    Swal.fire(
+        'Notificaciones',
+        `${JSON.stringify(arrayStorage).split(",")}`,
+    )
+}
+
 
 
 //Función para mostrar cards 
@@ -62,7 +71,7 @@ function mostrarCards(dias){
         // Resultado del filtrado
         contCartas.innerHTML+=`        
         <div class="carta card col-sm-2">
-            <img src="./imgs/lugares1.jpg" class="card-img-top" alt="imagen">
+            <img src=${dia.imagen} class="card-img-top" alt="imagen">
             <div class="card-body">
             <p class="card-text">${dia.localizacion}</p>
                 <p class="card-text">${dia.nombre}</p>
