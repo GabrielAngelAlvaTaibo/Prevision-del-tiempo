@@ -7,7 +7,7 @@
 
 //Ciclo para que el usuario conozca el clima de determinada zona
 
-while (mensaje.toLocaleLowerCase() == "si"){
+/*while (mensaje.toLocaleLowerCase() == "si"){
     let semana = prompt("Elija un día escribiendo su número correspondiente: \n1- Lunes \n2- Martes \n3- Miércoles \n4- Jueves \n5- Viernes \n6- Sábado \n7- Domingo");
     let propuesta
     // Condicional switch para mostrar opciones
@@ -90,3 +90,94 @@ while (mensaje.toLocaleLowerCase() == "si"){
 
     mensaje = prompt("¿Desea saber el clima de algún otro día? (-si- para continuar)");
 }
+*/
+
+let contCartas = document.createElement("li");
+let listaProvincias = document.getElementById("provincias");
+function listas(lista){
+    for(const listaElegida of lista){
+    listaProvincias.innerHTML=`
+    <ul>
+        <h2> ${listaElegida.localizacion}</h2>
+        <li>
+            ${contCartas}
+        </li>
+    </ul>
+`;
+}
+}
+
+
+// function mostrarCards(dias){
+//     for(const dia of dias){
+//         contCartas.innerHTML+=`
+        
+//         <div class="carta card col-sm-2">
+//             <img src="./imgs/lugares1.jpg" class="card-img-top" alt="imagen">
+//             <div class="card-body">
+//                 <p class="card-text">${arrayDias.nombre}</p>
+//                 <p class="card-text">${arrayDias.estado}</p>
+//             </div>
+//         </div>
+//         `;
+// //     }
+// // };
+// // let contVarProv = document.getElementById("provincias");
+// // function mostrarProvincias(array){
+// //     for(const provincia of array){
+// //         contVarProv.innerHTML+=`
+// //         <div>
+// //             <h2>${provincia.localizacion}</h2>
+// //         </div>
+// //         `;
+// //     }
+// // };
+
+// listas(arrayDias);
+
+let nombreUsuario = prompt("Ingrese su nombre");
+
+while ((nombreUsuario == "") || (nombreUsuario == " ")){
+    alert("Por favor, ingrese su nombre")
+    nombreUsuario = prompt("Ingrese su nombre");
+}
+
+alert("¡Bienvenido "+nombreUsuario+"!");
+
+let mensajeUbicacion = prompt("¿Desea predefinir una zona en específico? \n(-si- para continuar) \n(-s- para salir)");
+let ubicacion;
+
+// Ciclo de filtrado de ubicacion
+
+while(mensajeUbicacion !== "s"){
+    let propuesta
+    ubicacion = prompt("Por favor, ingrese el lugar de donde quiere información: \nBuenos Aires \nCórdoba \nSanta Fe \nMendoza \n(-s- para salir)");
+    if((ubicacion == "") || (ubicacion == " ")){
+        alert("Ubicación no encontrada");
+        }else{
+            alert("En consola encontrará toda la información");
+            const ubicacionesFiltradas = filtrarPorCiudad(ubicacion);
+            console.table(ubicacionesFiltradas);
+            propuesta = prompt ("¿Quiere una notificación de ahora en adelante para "+ubicacion+"? (-si- para añadir a notificaciones / -no- para omitir)");
+                if (propuesta.toLowerCase() == "si"){
+                    alert("Agregaste "+ubicacion+" en tus alertas");
+                    incrementarNotificaciones(1);
+                    }else{
+                        alert("De acuerdo");
+                    }
+        }
+    mensajeUbicacion = prompt("¿Desea predefinir otra zona en específico? \n(-si- para continuar) \n(-s- para salir)");
+};
+
+// Uso de una función para calcular la cantidad de alertas guardadas
+function incrementarNotificaciones(cantidad){
+    notificaciones = notificaciones + cantidad;
+    alert ("Tiene un total de "+notificaciones+" "+"alertas agregadas.")
+}
+// Función para filtrar por ciudad
+function filtrarPorCiudad(_localizaciones){
+    const filtro = arrayDias.filter((lugares) => lugares.localizacion == ubicacion);
+    return filtro;
+}
+
+alert("Gracias por elegirnos");

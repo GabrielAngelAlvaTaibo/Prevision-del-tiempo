@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./estilos/sass.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <h1>Sitio web de previsión del tiempo</h1>
+        <div id="buscador" >
+            <label for="filtrado"> Buscar ubicación 
+            <input type="text" name="filtrado" id="filtrado" class="botonFiltro">
+            <input type="submit" value="filtrar" id="botonBuscar">
+            </label>
+        </div>
+        <div id="notificaciones">
+            <input type="submit" id="botoNotificacion" value="Notificaciones" class="botonDeNotificacion" >
+        </div>
+
     </header>
-    <main></main>
+    <main>
+        <section>           
+        <!-- debajo se generan las cartas -->
+                <div class="galeria">
+                    <div id="contCiudades" class="galeria" class="galeriaCiudades"></div>                
+                </div>
+        </section>
+    </main>
     <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/objetos.js"></script>
-    <script src="./js/logica.js"></script>    
+    <script src="./js/main.js"></script>
 </body>
+
 </html>

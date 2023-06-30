@@ -1,8 +1,12 @@
+const arrayStorage = [
+
+]
 const arrayDias =[
     {
         localizacion: "Buenos Aires",
         nombre: "Lunes",
-        estado: "Este día será nublado, con posiblidad de lluvia"
+        estado: "Este día será nublado, con posiblidad de lluvia",
+        imagen:"./imgs/lugares1"
     },
     {
         localizacion: "Buenos Aires",
