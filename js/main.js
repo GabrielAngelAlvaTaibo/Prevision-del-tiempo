@@ -1,23 +1,20 @@
 sessionStorage.setItem("notificaciones", 0);
 sessionStorage.setItem("notificacionesGuardadas", JSON.stringify(arrayStorage));
-
 let contCartas = document.getElementById("contCiudades");
 let filtrado = document.getElementById("filtrado");
 let boton = document.getElementById("botonBuscar");
 let notificaciones = document.getElementById("botoNotificacion");
 let notificacionesResultado = parseInt(sessionStorage.getItem("notificaciones"))
 const notificacionEspecificas = JSON.parse(sessionStorage.getItem("notificacionesGuardadas"));
-
+// Impresión para comprobar propiedades
 console.log(typeof notificacionesResultado)
 console.log(notificacionEspecificas);
 console.log(typeof notificacionEspecificas);
 console.log(notificacionEspecificas)
-
 //Mintras no se escriba nada, se mostrarán todas las cards por defecto
 while(filtrado == ""){
     mostrarCards(arrayDias)
 }
-
 //Funcionalidad de botón "filtrar"
 boton.onclick = () => {
     console.log(`buscaste ${filtrado.value}`)
@@ -52,17 +49,15 @@ boton.onclick = () => {
         mostrarCards(arrayDias)
     }
 }
+// Funcionalidad del boton "notificaciones"
 notificaciones.onclick = () =>{
     console.log(typeof notificacionEspecificas);
     console.log(notificacionEspecificas)
     Swal.fire(
         'Notificaciones',
-        `${JSON.stringify(arrayStorage).split(",")}`,
+        `${JSON.stringify(arrayStorage.join(" | "))}`,
     )
 }
-
-
-
 //Función para mostrar cards 
 function mostrarCards(dias){
     // Vaciado de anteriores búsquedas
@@ -81,13 +76,11 @@ function mostrarCards(dias){
         `;
     }
 };
-
 //Función para filtrar cards
 function filtrarPorCiudad(localizaciones){
     const listaFiltro = arrayDias.filter((lugares) => lugares.localizacion == localizaciones);
     return mostrarCards(listaFiltro);
 }
-
 //Función para notificaciones
 function incrementarNotificaciones(cantidad){
     notificacionesResultado = notificacionesResultado + cantidad;

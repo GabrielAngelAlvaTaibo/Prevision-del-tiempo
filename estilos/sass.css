@@ -3,13 +3,41 @@
   padding: 0;
 }
 
-main .galeria {
+body {
+  width: 100%;
+  background-image: linear-gradient(to top, #482a85, rgba(241, 82, 255, 0.6705882353), #c47747);
+  background-repeat: no-repeat;
+}
+body header {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas: "titulo titulo" "buscaBoton notiBoton";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 100vh;
+}
+body header h1 {
+  grid-area: titulo;
+  font-size: 55px;
+}
+body header .buscaBoton {
+  grid-area: buscaBoton;
+}
+body header .notiBoton {
+  grid-area: notiBoton;
+}
+body header h1, body header p, body header label {
+  color: white;
+}
+body main .galeria {
   width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   padding: 2%;
 }
-main .galeria .carta {
+body main .galeria .carta {
   margin: 1%;
 }/*# sourceMappingURL=sass.css.map */

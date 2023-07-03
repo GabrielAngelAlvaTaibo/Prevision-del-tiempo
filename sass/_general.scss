@@ -1,0 +1,44 @@
+body{
+    width: 100%;
+    background-image: linear-gradient(to top, #482a85, #f152ffab, #c47747);
+    background-repeat: no-repeat;
+    header{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        grid-template-areas:
+        "titulo titulo"
+        "buscaBoton notiBoton"
+        ;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        height: 100vh;
+        h1{
+            grid-area: titulo;
+            font-size: 55px;
+        }
+        .buscaBoton{
+            grid-area: buscaBoton;
+        }
+        .notiBoton{
+            grid-area: notiBoton;
+        }        
+        h1, p, label{
+            color: white;
+        }
+    }
+    main{
+        .galeria{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2%;            
+            .carta{
+                margin: 1%;
+            }
+        }
+        
+    }
+}
