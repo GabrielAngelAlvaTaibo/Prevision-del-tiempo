@@ -1,6 +1,10 @@
 const arrayStorage = [
+    {provincias: "",}
     ]
 //las imágenes fueron elegidas a lo "bruto" por el momento. Para diferenciar las targetas fácilmente
+
+// const cualquiera: "";
+
 const arrayDias =[
     {
         localizacion: "Buenos Aires",

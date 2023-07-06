@@ -5,10 +5,10 @@ let filtrado = document.getElementById("filtrado");
 let boton = document.getElementById("botonBuscar");
 let notificaciones = document.getElementById("botoNotificacion");
 let notificacionesResultado = parseInt(sessionStorage.getItem("notificaciones"))
-const notificacionEspecificas = JSON.parse(sessionStorage.getItem("notificacionesGuardadas"));
+let notificacionEspecificas = sessionStorage.getItem("notificacionesGuardadas");
 // Impresión para comprobar propiedades
 console.log(typeof notificacionesResultado)
-console.log(notificacionEspecificas);
+console.log(notificacionesResultado);
 console.log(typeof notificacionEspecificas);
 console.log(notificacionEspecificas)
 //Mintras no se escriba nada, se mostrarán todas las cards por defecto
@@ -31,7 +31,7 @@ boton.onclick = () => {
     if (result.isConfirmed) {
         Swal.fire(`${filtrado.value} se a añadido ha tus notificaciones!`, '', 'success')
         sessionStorage.setItem("notificaciones", parseInt(incrementarNotificaciones(1)));
-        sessionStorage.setItem("notificacionesGuardadas", JSON.stringify(arrayStorage.push(`${filtrado.value}`)));
+        notificacionEspecificas = JSON.stringify(sessionStorage.getItem("notificacionesGuardadas",arrayStorage.push({provincias: filtrado.value})));
         console.log(notificacionesResultado);
         console.log(typeof notificacionesResultado);
         console.log(notificacionEspecificas);
@@ -55,7 +55,7 @@ notificaciones.onclick = () =>{
     console.log(notificacionEspecificas)
     Swal.fire(
         'Notificaciones',
-        `${JSON.stringify(arrayStorage.join(" | "))}`,
+        notificacionEspecificas = JSON.parse(arrayStorage.join(" | ")),
     )
 }
 //Función para mostrar cards 
@@ -86,3 +86,7 @@ function incrementarNotificaciones(cantidad){
     notificacionesResultado = notificacionesResultado + cantidad;
     return notificacionesResultado
 }
+// function guardar(sector){
+//     const notis = arrayStorage.push((buscado) => sector.push(buscado));
+//     return guardar(notis);
+// }
