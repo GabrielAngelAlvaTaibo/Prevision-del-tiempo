@@ -1,9 +1,23 @@
 const arrayStorage = [
-    {provincias: "",}
     ]
 //las imágenes fueron elegidas a lo "bruto" por el momento. Para diferenciar las targetas fácilmente
 
+
+class provinciasAStorage {
+    constructor(nombre)
+    {
+    this.provincias = nombre;
+    }
+}
+
 // const cualquiera: "";
+
+let notisProvincias = new provinciasAStorage(filtrado.value)
+function agregar(objetosCreados){
+    for(const [lugar, nombre] of objetosCreados.value(notisProvincias)){
+        return arrayStorage.push([lugar, nombre])
+    }
+}
 
 const arrayDias =[
     {

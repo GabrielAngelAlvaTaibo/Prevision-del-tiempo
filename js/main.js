@@ -31,7 +31,7 @@ boton.onclick = () => {
     if (result.isConfirmed) {
         Swal.fire(`${filtrado.value} se a añadido ha tus notificaciones!`, '', 'success')
         sessionStorage.setItem("notificaciones", parseInt(incrementarNotificaciones(1)));
-        notificacionEspecificas = JSON.stringify(sessionStorage.getItem("notificacionesGuardadas",arrayStorage.push({provincias: filtrado.value})));
+        agregar(notisProvincias)
         console.log(notificacionesResultado);
         console.log(typeof notificacionesResultado);
         console.log(notificacionEspecificas);
@@ -55,7 +55,7 @@ notificaciones.onclick = () =>{
     console.log(notificacionEspecificas)
     Swal.fire(
         'Notificaciones',
-        notificacionEspecificas = JSON.parse(arrayStorage.join(" | ")),
+        notificacionEspecificas = JSON.stringify(arrayStorage.join(" | ")),
     )
 }
 //Función para mostrar cards 
