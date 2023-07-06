@@ -1,16 +1,17 @@
 sessionStorage.setItem("notificaciones", 0);
-sessionStorage.setItem("notificacionesGuardadas", JSON.stringify(arrayStorage));
 let contCartas = document.getElementById("contCiudades");
-let filtrado = document.getElementById("filtrado");
+const filtrado = document.getElementById("filtrado");
 let boton = document.getElementById("botonBuscar");
 let notificaciones = document.getElementById("botoNotificacion");
 let notificacionesResultado = parseInt(sessionStorage.getItem("notificaciones"))
-let notificacionEspecificas = sessionStorage.getItem("notificacionesGuardadas");
+
+
+
 // Impresión para comprobar propiedades
 console.log(typeof notificacionesResultado)
-console.log(notificacionesResultado);
+console.log(arrayProvincias);
 console.log(typeof notificacionEspecificas);
-console.log(notificacionEspecificas)
+console.log(arrayProvincias)
 //Mintras no se escriba nada, se mostrarán todas las cards por defecto
 while(filtrado == ""){
     mostrarCards(arrayDias)
@@ -31,11 +32,11 @@ boton.onclick = () => {
     if (result.isConfirmed) {
         Swal.fire(`${filtrado.value} se a añadido ha tus notificaciones!`, '', 'success')
         sessionStorage.setItem("notificaciones", parseInt(incrementarNotificaciones(1)));
-        notisProvincias
+        crearObjeto
         console.log(notificacionesResultado);
         console.log(typeof notificacionesResultado);
-        console.log(notificacionEspecificas);
-        console.log(typeof notificacionEspecificas);
+        console.log(arrayProvincias);
+        console.log(typeof arrayProvincias);
     } else if (result.isDenied) {
         Swal.fire('De acuerdo :(', '')
     }
@@ -51,11 +52,11 @@ boton.onclick = () => {
 }
 // Funcionalidad del boton "notificaciones"
 notificaciones.onclick = () =>{
-    console.log(typeof notificacionEspecificas);
-    console.log(notificacionEspecificas)
+    console.log(typeof arrayProvincias);
+    console.log(arrayProvincias)
     Swal.fire(
         'Notificaciones',
-        notificacionEspecificas = JSON.stringify(arrayStorage.join(" | ")),
+        JSON.stringify(arrayProvincias),
     )
 }
 //Función para mostrar cards 
@@ -86,7 +87,3 @@ function incrementarNotificaciones(cantidad){
     notificacionesResultado = notificacionesResultado + cantidad;
     return notificacionesResultado
 }
-// function guardar(sector){
-//     const notis = arrayStorage.push((buscado) => sector.push(buscado));
-//     return guardar(notis);
-// }

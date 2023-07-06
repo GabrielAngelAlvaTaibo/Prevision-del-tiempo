@@ -1,20 +1,28 @@
-const arrayStorage = [
-    ]
+// const arrayStorage = [
+//     ]
 //las imágenes fueron elegidas a lo "bruto" por el momento. Para diferenciar las targetas fácilmente
 
 
-class provinciasAStorage {
+class Provincia {
     constructor(nombre)
     {
     this.provincias = nombre;
     }
 }
 
+const arrayProvincias = JSON.parse(localStorage.getItem("provincias")) || [];
 
-let notisProvincias = new provinciasAStorage(filtrado.value)
-    for(const [lugar, nombre] of Object.entries(notisProvincias)){
-        arrayStorage.push(lugar, nombre)
-    }
+function crearObjeto(e){
+    e.preventDefault();
+
+    const objeto = new Provincia(filtrado.value);
+
+    arrayProvincias.push(objeto);
+
+    localStorage.setItem("provincias", JSON.stringify(arrayProvincias))
+}
+
+
 
 const arrayDias =[
     {
