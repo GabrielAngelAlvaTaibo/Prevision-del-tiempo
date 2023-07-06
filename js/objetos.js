@@ -1,5 +1,4 @@
-// const arrayStorage = [
-//     ]
+
 //las imágenes fueron elegidas a lo "bruto" por el momento. Para diferenciar las targetas fácilmente
 
 

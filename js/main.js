@@ -1,25 +1,29 @@
 sessionStorage.setItem("notificaciones", 0);
 let contCartas = document.getElementById("contCiudades");
 const filtrado = document.getElementById("filtrado");
-let boton = document.getElementById("botonBuscar");
-let notificaciones = document.getElementById("botoNotificacion");
+const boton = document.getElementById("botonBuscar");
+const notificaciones = document.getElementById("botoNotificacion");
 let notificacionesResultado = parseInt(sessionStorage.getItem("notificaciones"))
 
 
 
 // Impresión para comprobar propiedades
+
 console.log(typeof notificacionesResultado)
 console.log(arrayProvincias);
-console.log(typeof notificacionEspecificas);
+console.log(typeof arrayProvincias);
 console.log(arrayProvincias)
+
 //Mintras no se escriba nada, se mostrarán todas las cards por defecto
-while(filtrado == ""){
+
+while(filtrado.value == ""){
     mostrarCards(arrayDias)
 }
 //Funcionalidad de botón "filtrar"
 boton.onclick = () => {
     console.log(`buscaste ${filtrado.value}`)
     filtrarPorCiudad(filtrado.value)
+    
     Swal.fire({
         position: 'top-end',
         title: `¿Desea añadir ${filtrado.value} a notificaciones?`,
@@ -29,18 +33,19 @@ boton.onclick = () => {
         denyButtonText: "No guardar",        
     })
     .then((result) => {
-    if (result.isConfirmed) {
-        Swal.fire(`${filtrado.value} se a añadido ha tus notificaciones!`, '', 'success')
-        sessionStorage.setItem("notificaciones", parseInt(incrementarNotificaciones(1)));
-        crearObjeto
-        console.log(notificacionesResultado);
-        console.log(typeof notificacionesResultado);
-        console.log(arrayProvincias);
-        console.log(typeof arrayProvincias);
-    } else if (result.isDenied) {
-        Swal.fire('De acuerdo :(', '')
-    }
-    })
+        if (result.isConfirmed) {
+            Swal.fire(`${filtrado.value} se a añadido ha tus notificaciones!`, '', 'success')
+            sessionStorage.setItem("notificaciones", parseInt(incrementarNotificaciones(1)));
+            crearObjeto()
+            console.log(notificacionesResultado);
+            console.log(typeof notificacionesResultado);
+            console.log(arrayProvincias);
+            console.log(typeof arrayProvincias);
+        } else if (result.isDenied) {
+            Swal.fire('De acuerdo :(', '')
+        }
+        })
+
     if((filtrado.value == " ") || (filtrado.value == "")){
         Swal.fire({
             icon: 'error',
