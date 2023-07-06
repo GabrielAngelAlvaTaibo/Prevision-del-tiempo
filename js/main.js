@@ -31,7 +31,7 @@ boton.onclick = () => {
     if (result.isConfirmed) {
         Swal.fire(`${filtrado.value} se a añadido ha tus notificaciones!`, '', 'success')
         sessionStorage.setItem("notificaciones", parseInt(incrementarNotificaciones(1)));
-        agregar(notisProvincias)
+        notisProvincias
         console.log(notificacionesResultado);
         console.log(typeof notificacionesResultado);
         console.log(notificacionEspecificas);

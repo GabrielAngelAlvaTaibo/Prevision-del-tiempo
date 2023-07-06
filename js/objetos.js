@@ -10,14 +10,11 @@ class provinciasAStorage {
     }
 }
 
-// const cualquiera: "";
 
 let notisProvincias = new provinciasAStorage(filtrado.value)
-function agregar(objetosCreados){
-    for(const [lugar, nombre] of objetosCreados.value(notisProvincias)){
-        return arrayStorage.push([lugar, nombre])
+    for(const [lugar, nombre] of Object.entries(notisProvincias)){
+        arrayStorage.push(lugar, nombre)
     }
-}
 
 const arrayDias =[
     {
