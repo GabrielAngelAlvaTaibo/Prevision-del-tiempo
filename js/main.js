@@ -16,9 +16,9 @@ console.log(arrayProvincias)
 
 //Mintras no se escriba nada, se mostrarán todas las cards por defecto
 
-while(filtrado.value == ""){
-    mostrarCards(arrayDias)
-}
+
+mostrarCards(arrayDias)
+
 //Funcionalidad de botón "filtrar"
 boton.onclick = () => {
     console.log(`buscaste ${filtrado.value}`)
