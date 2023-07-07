@@ -1,10 +1,11 @@
+// Variables, constantes, arrays y storage utilizados
 sessionStorage.setItem("notificaciones", 0);
-let contCartas = document.getElementById("contCiudades");
+let contCartas=document.getElementById("contCiudades");
 const filtrado = document.getElementById("filtrado");
 const boton = document.getElementById("botonBuscar");
 const notificaciones = document.getElementById("botoNotificacion");
 let notificacionesResultado = parseInt(sessionStorage.getItem("notificaciones"))
-
+const arrayProvincias = JSON.parse(localStorage.getItem("provincias")) || [];
 
 
 // Impresión para comprobar propiedades
@@ -14,9 +15,7 @@ console.log(arrayProvincias);
 console.log(typeof arrayProvincias);
 console.log(arrayProvincias)
 
-//Mintras no se escriba nada, se mostrarán todas las cards por defecto
-
-
+//Se mostrarán todas las cards por defecto
 mostrarCards(arrayDias)
 
 //Funcionalidad de botón "filtrar"
@@ -91,4 +90,15 @@ function filtrarPorCiudad(localizaciones){
 function incrementarNotificaciones(cantidad){
     notificacionesResultado = notificacionesResultado + cantidad;
     return notificacionesResultado
+}
+// Función para guardar toda provincia que se quiera almacenar en un array que, a la vez, va a ser almacenado
+// en el local storage
+function crearObjeto(){
+    // e.preventDefault(e);
+
+    const objeto = new Provincia(filtrado.value);
+
+    arrayProvincias.push(objeto);
+
+    localStorage.setItem("provincias", JSON.stringify(arrayProvincias))
 }

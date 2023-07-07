@@ -2,26 +2,13 @@
 //las imágenes fueron elegidas a lo "bruto" por el momento. Para diferenciar las targetas fácilmente
 
 
+// Constructor para crear objetos de las búsquedas
 class Provincia {
     constructor(nombre)
     {
     this.provincias = nombre;
     }
 }
-
-const arrayProvincias = JSON.parse(localStorage.getItem("provincias")) || [];
-
-function crearObjeto(e){
-    e.preventDefault();
-
-    const objeto = new Provincia(filtrado.value);
-
-    arrayProvincias.push(objeto);
-
-    localStorage.setItem("provincias", JSON.stringify(arrayProvincias))
-}
-
-
 
 const arrayDias =[
     {
