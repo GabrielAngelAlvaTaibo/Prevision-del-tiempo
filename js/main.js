@@ -76,8 +76,10 @@ function mostrarNotif(guardadas){
         </tr>`;
         const eliminar = document.getElementById("botonEliminar");
         eliminar.addEventListener("click",()=>{
-        const tablaCreada = document.getElementById("tablaCreada");
-        tablaCreada.remove();
+            localStorage.removeItem("provincias");
+            localStorage.setItem("notificaciones", parseInt(incrementarNotificaciones(-1)))
+            const tablaCreada = document.getElementById("tablaCreada");
+            tablaCreada.remove();
         });
     }
 }
