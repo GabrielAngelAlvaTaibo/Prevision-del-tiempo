@@ -15,14 +15,17 @@
         <div id="buscador" class="buscaBoton">
             <label for="filtrado"> Buscar ubicación 
                 <input type="text" name="filtrado" id="filtrado" class="botonFiltro">
-                <input type="submit" value="filtrar" id="botonBuscar">
+                <input type="submit" value="Añadir" id="botonAgregar">
             </label>
         </div>
         <div id="notificaciones" class="notiBoton">
-            <input type="submit" id="botoNotificacion" value="Notificaciones" class="botonDeNotificacion" >
+            <input type="submit" id="botoNotificacion" value="Notificaciones guardadas" class="botonDeNotificacion" >
         </div>
     </header>
     <main>
+        <table class="table table-dark table-striped">
+            <tbody id="notif"></tbody>
+        </table>
         <section>           
         <!-- debajo se generan las cartas -->
                 <div class="galeria">
