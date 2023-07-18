@@ -9,10 +9,11 @@ class Provincia {
     this.lugar = nombre;
     }
 }
-
+// Funcion de para extraer datos de la API
 function llamarAPI(city) {
+    const paises = document.getElementById("paises");
     const apiId = "33acf28cfb62ccf988fbc9d31f0d88b5";
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},ISO 3166-2:AR&appid=${apiId}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${paises.value}&appid=${apiId}`;
     fetch(url)
         .then(data => {
             return data.json();

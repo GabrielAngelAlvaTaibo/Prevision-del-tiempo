@@ -5,6 +5,7 @@ const filtradoProv = document.getElementById("filtradoProv");
 const botonBuscar = document.getElementById("botonBuscar");
 const boton = document.getElementById("botonAgregar");
 const notificaciones = document.getElementById("botoNotificacion");
+const notifi = document.getElementById("notif");
 let notificacionesResultado = parseInt(localStorage.getItem("notificaciones"))
 const arrayProvincias = JSON.parse(localStorage.getItem("provincias")) || [];
 
@@ -23,7 +24,7 @@ botonBuscar.addEventListener("click", ()=>{
     console.log(`buscaste ${filtradoProv.value}`);
     llamarAPI(filtradoProv.value)
 })
-//Funcionalidad de botón "filtrar" y label
+//Funcionalidad de botón "añadir"
 boton.addEventListener("click", () => {
     Swal.fire({
         position: 'top-end',
@@ -55,10 +56,7 @@ notificaciones.onclick = () =>{
     console.log(arrayProvincias);
     mostrarNotif(arrayProvincias)
 }
-
-//Funcionalidad del boton "Eliminar"
-const notifi = document.getElementById("notif");
-
+// Funcion que muestra las notificaciones guardadas en pantalla
 function mostrarNotif(guardadas){
     notifi.innerHTML=`
     <thead>
@@ -74,6 +72,7 @@ function mostrarNotif(guardadas){
             <th>${JSON.stringify(notif.lugar)}</th>
             <th><input type="submit" value="eliminar" id="botonEliminar"></th>                
         </tr>`;
+        //Funcionalidad del boton "Eliminar"
         const eliminar = document.getElementById("botonEliminar");
         eliminar.addEventListener("click",()=>{
             localStorage.removeItem("provincias");
@@ -117,7 +116,7 @@ function incrementarNotificaciones(cantidad){
     notificacionesResultado = notificacionesResultado + cantidad;
     return notificacionesResultado;
 }
-// Función para guardar toda provincia que se quiera almacenar en un array que, a la vez, va a ser almacenado
+// Función para guardar todo lugar que se quiera almacenar en un array que, a la vez, va a ser almacenado
 // en el local storage
 function crearObjeto(){
     // e.preventDefault(e);
