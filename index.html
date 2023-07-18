@@ -10,27 +10,29 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <header class="estilosHeader">
         <h1>Previsión del tiempo</h1>
-        <div id="buscador" class="buscaBoton">
-            <label for="filtrado"> Buscar ubicación 
-                <input type="text" name="provincia" id="filtradoProv" class="botonFiltro">
-                <input type="submit" name="Buscar" value="Buscar" id="botonBuscar">
-                <input type="submit" value="Añadir" id="botonAgregar">
+        <div id="buscador" class="buscaBoton" class="estilosBotones">
+            <label for="filtrado" class="estilosBotones"> Buscar ubicación 
+                <input type="text" name="provincia" id="filtradoProv" class="estilosBar">
+                <input type="submit" name="Buscar" value="Buscar" id="botonBuscar" class="estilosBotones">                
             </label>
         </div>
-        <select name="paises" id="paises">
+        <select name="paises" id="paises" class="paises" class="estilosBotones">
             <option disabled selected value="">Elija su país de interés</option>
-            <option value="AR">Argentina</option>
-            <option value="CO">Colombia</option>
-            <option value="CR">Costa Rica</option>
-            <option value="ES">España</option>
-            <option value="US">Estados Unidos</option>
-            <option value="MX">México</option>
-            <option value="PE">Perú</option>
+            <option class="estilosBotones" value="AR">Argentina</option>
+            <option class="estilosBotones" value="CO">Colombia</option>
+            <option class="estilosBotones" value="CR">Costa Rica</option>
+            <option class="estilosBotones" value="ES">España</option>
+            <option class="estilosBotones" value="US">Estados Unidos</option>
+            <option class="estilosBotones" value="MX">México</option>
+            <option class="estilosBotones" value="PE">Perú</option>
         </select>
-        <div id="notificaciones" class="notiBoton">
-            <input type="submit" id="botoNotificacion" value="Notificaciones guardadas" class="botonDeNotificacion" >
+        <div id="notificaciones">
+            <input type="submit" id="botoNotificacion" value="Notificaciones guardadas" class="botonDeNotificacion notiBoton">
+        </div>
+        <div>
+            <input type="submit" value="Añadir" id="botonAgregar" class="botonAgregar">
         </div>
     </header>
     <main>

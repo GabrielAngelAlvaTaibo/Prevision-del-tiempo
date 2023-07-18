@@ -1,31 +1,63 @@
 body{
     width: 100%;
-    background-image: linear-gradient(to top, #482a85, #f152ffab, #c47747);
+    height: 160vh;
+    background-image: linear-gradient(to top, #482a85, #7834ff, #c47747);
     background-repeat: no-repeat;
     header{
+        padding-top: 20px;
         display: grid;
         justify-content: center;
         align-items: center;
         justify-items: center;
         grid-template-areas:
-        "titulo titulo"
-        "buscaBoton notiBoton"
+        "titulo titulo titulo"
+        "buscaBoton notiBoton botonAgregar"
+        "paises . ."
         ;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(2,1fr);
-        height: 100vh;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,80px);
+        background-color: rgb(255, 255, 255);
+        border-bottom: 2px groove rgb(187, 187, 187);
         h1{
             grid-area: titulo;
             font-size: 55px;
+            padding-bottom: 10px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .estilosBar, .notiBoton, .botonAgregar, .paises{
+            background-image: linear-gradient(to top, #7834ff, #36a0e7);         
+            border: 2px inset rgb(187, 187, 187);
+            color: white;
+            font-weight: 600;
+        } 
+        .estilosBotones{
+            background-color: #482a8500;
+            border: 2px inset #482a8500;
+            color: #7834ff;
+            font-weight: 600;
         }
         .buscaBoton{
-            grid-area: buscaBoton;
+            grid-area: buscaBoton;    
+        }
+        .botonFiltro{
+            padding: 5px;
         }
         .notiBoton{
             grid-area: notiBoton;
+            padding: 25px;
         }        
-        h1, p, label{
-            color: white;
+        .botonAgregar{
+            grid-area: botonAgregar;
+            padding: 25px;
+        }
+        .paises{
+            grid-area: paises;
+            margin-bottom: 90px;
+        }
+        h1, p, label, .estilosBotones{
+            color: #482a85;
+            font-family: 'EB Garamond', serif;
         }
     }
     main{

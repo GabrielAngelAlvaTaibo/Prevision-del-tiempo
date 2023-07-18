@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,31 +6,62 @@
 
 body {
   width: 100%;
-  background-image: linear-gradient(to top, #482a85, rgba(241, 82, 255, 0.6705882353), #c47747);
+  height: 160vh;
+  background-image: linear-gradient(to top, #482a85, #7834ff, #c47747);
   background-repeat: no-repeat;
 }
 body header {
+  padding-top: 20px;
   display: grid;
   justify-content: center;
   align-items: center;
   justify-items: center;
-  grid-template-areas: "titulo titulo" "buscaBoton notiBoton";
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  height: 100vh;
+  grid-template-areas: "titulo titulo titulo" "buscaBoton notiBoton botonAgregar" "paises . .";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 80px);
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px groove rgb(187, 187, 187);
 }
 body header h1 {
   grid-area: titulo;
   font-size: 55px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+body header .estilosBar, body header .notiBoton, body header .botonAgregar, body header .paises {
+  background-image: linear-gradient(to top, #7834ff, #36a0e7);
+  border: 2px inset rgb(187, 187, 187);
+  color: white;
+  font-weight: 600;
+}
+body header .estilosBotones {
+  background-color: rgba(72, 42, 133, 0);
+  border: 2px inset rgba(72, 42, 133, 0);
+  color: #7834ff;
+  font-weight: 600;
 }
 body header .buscaBoton {
   grid-area: buscaBoton;
 }
+body header .botonFiltro {
+  padding: 5px;
+}
 body header .notiBoton {
   grid-area: notiBoton;
+  padding: 25px;
 }
-body header h1, body header p, body header label {
-  color: white;
+body header .botonAgregar {
+  grid-area: botonAgregar;
+  padding: 25px;
+}
+body header .paises {
+  grid-area: paises;
+  margin-bottom: 90px;
+}
+body header h1, body header p, body header label, body header .estilosBotones {
+  color: #482a85;
+  font-family: "EB Garamond", serif;
 }
 body main .galeria {
   width: 100%;
