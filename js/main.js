@@ -95,13 +95,13 @@ function mostrarCards(data){
     const max = deKelvinACentigrados(temp_max);
     // Lo que es mostrado en pantalla
     contCartas.innerHTML = `
-        <div class="carta card text-white bg-dark mb-3 col-sm-2 text-center">
-            <h5 card-header>Clima en ${name}</h5>
-            <img src="https://openweathermap.org/img/wn/${arr.icon}@2x.png" alt="icon">
-            <div class="card-body">
-                <h2 class="card-text text-center">${degrees}°C</h2>
-                <p class="card-text text-center">Max: ${max}°C</p>
-                <p class="card-text text-center">Min: ${min}°C</p>
+        <div class="estilosCarta">
+            <h5 class="estilosCartaTitulo">Clima en ${name}</h5>
+            <img class="cartaImg" src="https://openweathermap.org/img/wn/${arr.icon}@2x.png" alt="icon">
+            <div>
+                <h2 class="">${degrees}°C</h2>
+                <p class="">Max: ${max}°C</p>
+                <p class="">Min: ${min}°C</p>
             </div>
         </div>
         `;

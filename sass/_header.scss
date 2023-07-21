@@ -1,0 +1,58 @@
+body{
+    header{
+        padding-top: 20px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        grid-template-areas:
+        "titulo titulo titulo"
+        "buscaBoton notiBoton botonAgregar"
+        "paises . ."
+        ;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,80px);
+        background-color: rgba(0, 0, 0, 0.568);
+        border-bottom: 5px groove rgb(0, 0, 0);
+        h1{
+            grid-area: titulo;
+            font-size: 55px;
+            padding-bottom: 10px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .estilosBar, .notiBoton, .botonAgregar, .paises{
+            background-image: linear-gradient(to top, #050507, #2a2b2b);         
+            border: 2px inset rgb(15, 17, 29);
+            color: white;
+            font-weight: 600;
+        } 
+        .estilosBotones{
+            background-image: linear-gradient(to top, #050507, #2a2b2b);
+            border: 2px inset #482a8500;            
+        }
+        .buscaBoton{
+            grid-area: buscaBoton;    
+        }
+        .botonFiltro{
+            padding: 5px;
+        }
+        .notiBoton{
+            grid-area: notiBoton;
+            padding: 25px;
+        }        
+        .botonAgregar{
+            grid-area: botonAgregar;
+            padding: 25px;
+        }
+        .paises{
+            grid-area: paises;
+            margin-bottom: 90px;
+        }
+        h1, p, label, .estilosBotones, .buscaBotonLabel{
+            color: rgb(160, 160, 160);
+            text-shadow: 2px 2px 3px rgb(39, 39, 39);
+            font-family: 'EB Garamond', serif;
+        }
+    }
+}
